@@ -1,7 +1,10 @@
 import React from 'react'
+import "./css/fact.css"
 
-export const fact = () => {
+export const FactComponent = (props) => {
   return (
-	<div>fact</div>
+	<div className="FactWrapper">
+		<p className="FactLine">{props.line}</p>
+	</div>
   )
 }
