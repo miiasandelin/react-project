@@ -19,8 +19,9 @@ export const RandomDogFacts = () => {
 	const handleNumberInput = (event) => {
 		const val = event.target.value;
 		setNumber(val);
-		console.log(value)
 	};
+
+	var child = 0;
 
 	return (
 		<div>
@@ -37,8 +38,9 @@ export const RandomDogFacts = () => {
 			</div>
 			<div>
 				{Facts?.map((fact) => {
+					child++;
 					return (
-						<div>
+						<div key={child}>
 							<FactComponent line={fact} />
 						</div>
 					)
