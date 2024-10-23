@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react'
 import { useEffect, useState } from 'react'
 import { FactComponent } from '../components/fact.jsx'
+import "./css/RandomDogFacts.css"
 
 export const RandomDogFacts = () => {
 
@@ -13,19 +14,36 @@ export const RandomDogFacts = () => {
 		axios.get(APIURL + Number).then((response) => {
 			setFacts(response.data["facts"])
 		});
-	}, [])
+	}, [Number])
 
-
+	const handleNumberInput = (event) => {
+		const val = event.target.value;
+		setNumber(val);
+		console.log(value)
+	};
 
 	return (
 		<div>
-			{Facts?.map((fact) => {
-				return (
-					<div>
-						<FactComponent line={fact}/>
-					</div>
-				)
-			})}
+			<div className="sliderWrapper">
+				<h2>{Number} dog facts</h2>
+				<input
+					className="slider"
+					type="range"
+					min={1}
+					max={10}
+					value={Number}
+					onChange={handleNumberInput}
+				/>
+			</div>
+			<div>
+				{Facts?.map((fact) => {
+					return (
+						<div>
+							<FactComponent line={fact} />
+						</div>
+					)
+				})}
+			</div>
 		</div>
 	)
 }
