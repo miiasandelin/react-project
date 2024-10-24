@@ -1,7 +1,9 @@
 .FactLine {
-	color: blueviolet;
+	background: black;
+	color: white;
 }
 
 .FactWrapper {
-	border: 5px solid green;
+	background: black;
+	border: 5px solid #424852;
 }
