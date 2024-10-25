@@ -1,16 +1,17 @@
 import React from 'react';
 
-const OrderInfo = ({ productName, price, quantity }) => {
-	const totalPrice = price * quantity;
+const OrderInfo = (props) => {
 
-  return (
-	<div className='order-info'>
-		<p>Product: {productName}</p>
-		<p>Price: {price}€</p>
-		<p>Quantity: {quantity}</p>
-		<p>Total Price: {totalPrice}€</p>
-	</div>
-  );
+	const totalPrice = props.product.price * props.quantity;
+
+	return (
+		<div className='order-info'>
+			<p>Product: {props.product.name}</p>
+			<p>Price: {props.product.price.toFixed(2)} €</p>
+			<p>Quantity: {props.quantity}</p>
+			<p>Total Price: {totalPrice.toFixed(2)} €</p>
+		</div>
+	);
 };
 
 export default OrderInfo;

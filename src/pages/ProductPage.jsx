@@ -7,33 +7,33 @@ import '../pages/css/ProductPage.css'
 import headerImage from '../assets/headerImage.png';
 
 const ProductPage = () => {
-	const products = ['AMD Ryzen 5 3600 (245€)', 'NVIDIA GeForce RTX 4070 (679€)']
-	const prices = [245.0, 679.0]
+
+	const products = 
+	[
+		{
+			name: "AMD Ryzen 5 3600",
+			price: 245.0
+		},
+		{
+			name: "NVIDIA GeForce RTX 4070",
+			price: 679.0
+		}
+	]
 
 	const [selectedProduct, setSelectedProduct] = useState(0);
 	const [quantity, setQty] = useState(1);
-
-	const handleProductChange = (index) => {
-		setSelectedProduct(index);
-	};
-
-	const handleQtyChange = (newQty) => {
-		setQty(newQty);
-	};
 
 	return (
 		<div className='product-page'>
 			<Header image={headerImage} title="Welcome to product page!"/>
 			<ProductForm
 				products={products}
-				prices={prices}
-				onProductChange={handleProductChange}
-				onQtyChange={handleQtyChange}
+				onProductChange={setSelectedProduct}
+				onQtyChange={setQty}
 			/>
 
 			<OrderInfo
-				productName={products[selectedProduct]}
-				price={prices[selectedProduct]}
+				product={products[selectedProduct]}
 				quantity={quantity}
 			/>
 		</div>

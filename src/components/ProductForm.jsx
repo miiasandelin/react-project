@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
 
-const ProductForm = ({ products, prices, onProductChange, onQtyChange }) => {
+const ProductForm = (props) => {
 	const [selectedProduct, setSelectedProduct] = useState(0);
 	const [quantity, setQty] = useState(1);
+
+
 
 	const handleProductChange = (e) => {
 		const index = parseInt(e.target.value)
 		setSelectedProduct(index);
-		onProductChange(index);
+		props.onProductChange(index);
 	};
 
 	const increaseQty = () => {
 		const newQty = quantity + 1;
 		setQty(newQty);
-		onQtyChange(newQty);
+		props.onQtyChange(newQty);
 	};
 
 	const decreaseQty = () => {
@@ -21,7 +23,7 @@ const ProductForm = ({ products, prices, onProductChange, onQtyChange }) => {
 		if (quantity > 1) {
 			const newQty = quantity - 1;
 			setQty(newQty);
-			onQtyChange(newQty);
+			props.onQtyChange(newQty);
 		};
 	};
 
@@ -29,9 +31,9 @@ const ProductForm = ({ products, prices, onProductChange, onQtyChange }) => {
 		<div className="product-form">
 			<label>Product: </label>
 			<select value={selectedProduct} onChange={handleProductChange}>
-				{products.map((product, index) => (
+				{props.products.map((product, index) => (
 					<option key={index} value={index}>
-						{product}
+						{product.name} ({product.price.toFixed(2)} €)
 					</option>
 				))}
 			</select>
