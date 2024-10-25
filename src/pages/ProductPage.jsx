@@ -4,6 +4,8 @@ import ProductForm from '../components/ProductForm';
 import OrderInfo from '../components/OrderInfo';
 import '../pages/css/ProductPage.css'
 
+import headerImage from '../assets/headerImage.png';
+
 const ProductPage = () => {
 	const products = ['AMD Ryzen 5 3600 (245€)', 'NVIDIA GeForce RTX 4070 (679€)']
 	const prices = [245.0, 679.0]
@@ -21,7 +23,7 @@ const ProductPage = () => {
 
 	return (
 		<div className='product-page'>
-			<Header />
+			<Header image={headerImage} title="Welcome to product page!"/>
 			<ProductForm
 				products={products}
 				prices={prices}
