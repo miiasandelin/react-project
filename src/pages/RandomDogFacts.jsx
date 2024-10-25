@@ -26,7 +26,7 @@ export const RandomDogFacts = () => {
 	return (
 		<div>
 			<div className="sliderWrapper">
-				<h2>{Number === '1' ? `${Number} dog fact` : `${Number} dog facts`}</h2>
+				<h2>{Number} dog fact{Number === '1' ? null: 's'}</h2>
                 <input
 					className="slider"
 					type="range"
