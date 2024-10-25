@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ProductForm = ({ products, prices, productChange, qtyChange }) => {
+const ProductForm = ({ products, prices, onProductChange, onQtyChange }) => {
 	const [selectedProduct, setSelectedProduct] = useState(0);
 	const [quantity, setQty] = useState(1);
 

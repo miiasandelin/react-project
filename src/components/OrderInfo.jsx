@@ -6,9 +6,9 @@ const OrderInfo = ({ productName, price, quantity }) => {
   return (
 	<div className='order-info'>
 		<p>Product: {productName}</p>
-		<p>Price: {price}</p>
+		<p>Price: {price}€</p>
 		<p>Quantity: {quantity}</p>
-		<p>Total Price: {totalPrice}</p>
+		<p>Total Price: {totalPrice}€</p>
 	</div>
   );
 };
