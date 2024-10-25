@@ -1,0 +1,9 @@
+.FactLine {
+	background: black;
+	color: white;
+}
+
+.FactWrapper {
+	background: black;
+	border: 5px solid #424852;
+}
