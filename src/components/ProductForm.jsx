@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const ProductForm = ({ products, prices, productChange, qtyChange }) => {
 	const [selectedProduct, setSelectedProduct] = useState(0);
-	const [quantity, setQuantity] = useState(1);
+	const [quantity, setQty] = useState(1);
 
 	const handleProductChange = (e) => {
 		const index = parseInt(e.target.value)
@@ -11,17 +11,17 @@ const ProductForm = ({ products, prices, productChange, qtyChange }) => {
 	};
 
 	const increaseQty = () => {
-		const newQuantity = quantity + 1;
-		setQuantity(newQuantity);
-		onQuantityChange(newQuantity);
+		const newQty = quantity + 1;
+		setQty(newQty);
+		onQtyChange(newQty);
 	};
 
 	const decreaseQty = () => {
 
 		if (quantity > 1) {
-			const newQuantity = quantity - 1;
-			setQuantity(newQuantity);
-			onQuantityChange(newQuantity);
+			const newQty = quantity - 1;
+			setQty(newQty);
+			onQtyChange(newQty);
 		};
 	};
 
