@@ -1,8 +1,29 @@
 import React, { useState } from 'react';
 
 const ProductForm = ({ products, prices, productChange, qtyChange }) => {
+	const [selectedProduct, setSelectedProduct] = useState(0);
+	const [quantity, setQuantity] = useState(1);
 
-	// functions for the dropdown menu and quantity
+	const handleProductChange = (e) => {
+		const index = parseInt(e.target.value)
+		setSelectedProduct(index);
+		onProductChange(index);
+	};
+
+	const increaseQty = () => {
+		const newQuantity = quantity + 1;
+		setQuantity(newQuantity);
+		onQuantityChange(newQuantity);
+	};
+
+	const decreaseQty = () => {
+
+		if (quantity > 1) {
+			const newQuantity = quantity - 1;
+			setQuantity(newQuantity);
+			onQuantityChange(newQuantity);
+		};
+	};
 
 	return (
 		<div className="product-form">
