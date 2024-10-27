@@ -1,15 +1,5 @@
-.product-form {
-	margin: 20px;
-  }
-
-.quantity-controls {
-	display: flex;
-	align-items: center;
-	gap: 10px;
-	color: brown;
-}
-  
-.quantity-controls button {
-	padding: 5px 10px;
-	color: brown;
+.ProductForm {
+	margin-right: 25%;
+	border: 5px solid green;
+	align-items:start;
 }

@@ -3,12 +3,11 @@
 	align-items: center;
 	justify-content: center;
 	padding: 10px;
-	background-color: #f8f9fa;
-	border: 5px green solid;
   }
 
 .header-title {
-	color: red;
+	color: rgb(0, 0, 0);
+	font-family: 'Times New Roman', Times, serif;
 	
 }
 

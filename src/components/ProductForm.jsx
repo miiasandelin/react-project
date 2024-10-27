@@ -29,6 +29,7 @@ const ProductForm = (props) => {
 
 	return (
 		<div className="product-form">
+			<p>Select product</p>
 			<label>Product: </label>
 			<select value={selectedProduct} onChange={handleProductChange}>
 				{props.products.map((product, index) => (

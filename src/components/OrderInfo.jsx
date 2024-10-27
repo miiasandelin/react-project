@@ -1,4 +1,5 @@
 import React from 'react';
+import './css/OrderInfo.css'
 
 const OrderInfo = (props) => {
 
@@ -6,10 +7,23 @@ const OrderInfo = (props) => {
 
 	return (
 		<div className='order-info'>
-			<p>Product: {props.product.name}</p>
-			<p>Price: {props.product.price.toFixed(2)} €</p>
-			<p>Quantity: {props.quantity}</p>
-			<p>Total Price: {totalPrice.toFixed(2)} €</p>
+			<h2>Order info</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Product</th>
+						<th>Quantity</th>
+						<th>Total</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>{props.product.name} {props.product.price.toFixed(2)} €</td>
+						<td>{props.quantity}</td>
+						<td>{totalPrice.toFixed(2)} €</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	);
 };
